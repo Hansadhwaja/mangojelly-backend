@@ -46,7 +46,7 @@ This is the backend for a React-based e-commerce store that allows managing comi
 
     Add the following environment variables to the `.env` file:
     ```env
-    MONGO_URI=set your mongodb uri
+    MONGO_URI=
     PORT=3000
     ```
 
@@ -113,17 +113,17 @@ This will launch the server on `http://localhost:3000` and connect to the MongoD
 ### Comic Book List
 
 #### Fetch Inventory List
--**Endpoint**: `GET /api/comics`
--**Description**: Retrieves all comic books in the inventory.
--**Query Parameters (optional)**:
--***limit***: Number of results to return per page (for pagination).
--***sort***: Field by which to sort the results (e.g., price, year, bookName).
--***filter[year]***: Filter by year of publication.
--***filter[author]***: Filter by author name.
--***filter[condition]***: Filter by condition (e.g., new, used).
--***page***: Page number for pagination.
--***Example Request***: `/api/comics?limit=10&sort=price&filter[year]=2004&page=1`
--***Response Example***:
+
+- **Endpoint**: `GET /api/comics`
+- **Description**: Retrieves all comic books in the inventory.
+- **Query Parameters (optional)**:
+  - **`limit`**: Number of results to return per page (for pagination).
+  - **`sort`**: Field by which to sort the results (e.g., `price`, `year`, `bookName`).
+  - **`filter[year]`**: Filter by year of publication.
+  - **`filter[author]`**: Filter by author name.
+  - **`filter[condition]`**: Filter by condition (e.g., `new`, `used`).
+  - **`page`**: Page number for pagination.
+- **Example Request**: 
 ```json
 {
   "totalItems": 50,
@@ -203,9 +203,5 @@ A Postman Collection is available for easy API testing. You can import the colle
 
 ---
 
-## License
 
-This project is licensed under the MIT License.
-
-```
 
