@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "0890a7ed-3bf4-4ba6-a73e-03ee70663328",
+		"name": "Comic Book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27761577"
+	},
+	"item": [
+		{
+			"name": "createBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookName\": \"The Amazing Spider-Man\",\r\n    \"authorName\": \"Stan Lee\",\r\n    \"year\": 1963,\r\n    \"price\": 50.99,\r\n    \"discount\": 10,\r\n    \"pages\": 32,\r\n    \"condition\": \"new\",\r\n    \"description\": \"The first issue of Spider-Man's solo series. A must-have for any Marvel fan!\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/comicbooks/create",
+				"description": "used to create a newbook"
+			},
+			"response": []
+		},
+		{
+			"name": "editBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookName\": \"The Amazing Spider-Man\",\r\n    \"authorName\": \"Stan Lee\",\r\n    \"year\": 2004,\r\n    \"price\": 45.99,\r\n    \"discount\": 15,\r\n    \"pages\": 32,\r\n    \"condition\": \"used\",\r\n    \"description\": \"A classic comic book featuring Spider-Man in his early years, with a slight discount due to condition.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/comicbooks/edit/67113972183baaeab4ab4b56",
+				"description": "used to edit a book by its id"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/api/comicbooks/delete/67113972183baaeab4ab4b56",
+				"description": "used to delete a book by its id"
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAllBooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/comicbooks/list?page=1&limit=10&sort=price&filter[year]=2004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"comicbooks",
+						"list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "price"
+						},
+						{
+							"key": "filter[year]",
+							"value": "2004"
+						}
+					]
+				},
+				"description": "finds all books in the database"
+			},
+			"response": []
+		},
+		{
+			"name": "fetchSpecificBook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/api/comicbooks/67113a39e75e2ebde5622759",
+				"description": "find a specific book by its id"
+			},
+			"response": []
+		}
+	]
+}
