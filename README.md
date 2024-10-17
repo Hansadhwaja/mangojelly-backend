@@ -63,7 +63,7 @@ To start the project, simply run:
 npm start
 ```
 
-This will launch the server on `http://localhost:5000` and connect to the MongoDB database.
+This will launch the server on `http://localhost:3000` and connect to the MongoDB database.
 
 ## API Documentation
 
@@ -93,8 +93,7 @@ This will launch the server on `http://localhost:5000` and connect to the MongoD
 - **Description**: Updates an existing comic book.
 - **Request Body** (for example, updating the price):
   ```json
-
- {
+  {
     "bookName": "The Amazing Spider-Man",
     "authorName": "Stan Lee",
     "year": 2004,
@@ -103,9 +102,8 @@ This will launch the server on `http://localhost:5000` and connect to the MongoD
     "pages": 32,
     "condition": "used",
     "description": "A classic comic book featuring Spider-Man in his early years, with a slight discount due to condition."
-}
-
-```
+  }
+  ```
 
 #### Delete a Comic Book
 
@@ -114,20 +112,19 @@ This will launch the server on `http://localhost:5000` and connect to the MongoD
 
 ### Comic Book List
 
-Fetch Inventory List
-Endpoint: GET /api/comics
-Description: Retrieves all comic books in the inventory.
-Query Parameters (optional):
-limit: Number of results to return per page (for pagination).
-sort: Field by which to sort the results (e.g., price, year, bookName).
-filter[year]: Filter by year of publication.
-filter[author]: Filter by author name.
-filter[condition]: Filter by condition (e.g., new, used).
-page: Page number for pagination.
-Example Request: /api/comics?limit=10&sort=price&filter[year]=2004&page=1
-Response Example:
-json
-Copy code
+#### Fetch Inventory List
+-**Endpoint**: `GET /api/comics`
+-**Description**: Retrieves all comic books in the inventory.
+-**Query Parameters (optional)**:
+-***limit***: Number of results to return per page (for pagination).
+-***sort***: Field by which to sort the results (e.g., price, year, bookName).
+-***filter[year]***: Filter by year of publication.
+-***filter[author]***: Filter by author name.
+-***filter[condition]***: Filter by condition (e.g., new, used).
+-***page***: Page number for pagination.
+-***Example Request***: `/api/comics?limit=10&sort=price&filter[year]=2004&page=1`
+-***Response Example***:
+```json
 {
   "totalItems": 50,
   "totalPages": 5,
@@ -193,14 +190,14 @@ You can test the API endpoints using **Postman** or **cURL**.
 To test the `/api/comics` endpoint with `cURL`, you can use:
 
 ```bash
-curl -X GET http://localhost:5000/api/comics
+curl -X GET http://localhost:3000/api/comics
 ```
 
 ## Postman Collection
 
 A Postman Collection is available for easy API testing. You can import the collection by following these steps:
 
-1. Download the collection file: [Postman Collection](./Comic Book.postman_collection.json)
+1. Download the collection file: [Download Postman Collection](./Comic%20Book.postman_collection.json)
 2. Open Postman and go to the **Import** section.
 3. Select the downloaded JSON file to import all the API endpoints.
 
@@ -212,7 +209,3 @@ This project is licensed under the MIT License.
 
 ```
 
-### Changes Added:
-- Complete API documentation for managing comic books.
-- Sample request body examples for each API operation (Create, Edit, Delete, Fetch, and Get Details).
-- Clarified how to use the Postman Collection and cURL for testing.
