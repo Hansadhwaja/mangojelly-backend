@@ -123,7 +123,7 @@ This will launch the server on `http://localhost:3000` and connect to the MongoD
   - **`filter[author]`**: Filter by author name.
   - **`filter[condition]`**: Filter by condition (e.g., `new`, `used`).
   - **`page`**: Page number for pagination.
-- **Example Request**: `GET /api/comics?limit=10&sort=price&filter[year]=2004&page=1`
+- **Example Request**: `GET /api/comicbooks/list?page=1&limit=10&sort=price&filter[year]=2004`
 - **Response Example**:
 ```json
 {
