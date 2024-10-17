@@ -71,7 +71,7 @@ This will launch the server on `http://localhost:3000` and connect to the MongoD
 
 #### Create a Comic Book
 
-- **Endpoint**: `POST /api/comics`
+- **Endpoint**: `POST /api/comicbooks/create`
 - **Description**: Adds a new comic book to the inventory.
 - **Request Body**:
   ```json
@@ -89,7 +89,7 @@ This will launch the server on `http://localhost:3000` and connect to the MongoD
 
 #### Edit a Comic Book
 
-- **Endpoint**: `PUT /api/comics/:id`
+- **Endpoint**: `PUT /api/comicbooks/edit/:id`
 - **Description**: Updates an existing comic book.
 - **Request Body** (for example, updating the price):
   ```json
@@ -107,14 +107,14 @@ This will launch the server on `http://localhost:3000` and connect to the MongoD
 
 #### Delete a Comic Book
 
-- **Endpoint**: `DELETE /api/comics/:id`
+- **Endpoint**: `DELETE /api/comicbooks/delete/:id`
 - **Description**: Removes a comic book from the inventory.
 
 ### Comic Book List
 
 #### Fetch Inventory List
 
-- **Endpoint**: `GET /api/comics`
+- **Endpoint**: `GET /api/comicbooks/list`
 - **Description**: Retrieves all comic books in the inventory.
 - **Query Parameters (optional)**:
   - **`limit`**: Number of results to return per page (for pagination).
@@ -123,7 +123,8 @@ This will launch the server on `http://localhost:3000` and connect to the MongoD
   - **`filter[author]`**: Filter by author name.
   - **`filter[condition]`**: Filter by condition (e.g., `new`, `used`).
   - **`page`**: Page number for pagination.
-- **Example Request**: 
+- **Example Request**: `GET /api/comics?limit=10&sort=price&filter[year]=2004&page=1`
+- **Response Example**:
 ```json
 {
   "totalItems": 50,
@@ -160,7 +161,7 @@ This will launch the server on `http://localhost:3000` and connect to the MongoD
 
 #### Get Comic Book Details
 
-- **Endpoint**: `GET /api/comics/:id`
+- **Endpoint**: `GET /api/comicbooks/:id`
 - **Description**: Retrieves detailed information of a specific comic book by its ID.
 
 #### Response Example:
